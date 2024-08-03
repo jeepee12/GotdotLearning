@@ -15,8 +15,9 @@ position = Vector2(-502, 7)
 mass = 0.39
 gravity_scale = 0.505
 script = ExtResource("2_cyp62")
-speedModifier = 100.0
-downModifier = -5.0
+speedModifier = 200000.0
+downModifier = -5000.0
+airFriction = 1.0
 
 [node name="birdy" type="Sprite2D" parent="Birdy"]
 texture = ExtResource("1_owbrx")
