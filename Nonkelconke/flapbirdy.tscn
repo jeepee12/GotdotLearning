@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3e0dcxuvlov7"]
+[gd_scene load_steps=3 format=3 uid="uid://c3e0dcxuvlov7"]
 
 [ext_resource type="Texture2D" uid="uid://beppkfnja3fyp" path="res://Assets/2D/MC/birdy.png" id="1_owbrx"]
+[ext_resource type="Script" path="res://Birdy.cs" id="2_cyp62"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(180, 380)
+position = Vector2(152, 338)
 texture = ExtResource("1_owbrx")
+script = ExtResource("2_cyp62")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
