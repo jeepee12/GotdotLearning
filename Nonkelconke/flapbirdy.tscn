@@ -6,9 +6,10 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(152, 338)
+position = Vector2(-502, 7)
 texture = ExtResource("1_owbrx")
 script = ExtResource("2_cyp62")
+speedModifier = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
 

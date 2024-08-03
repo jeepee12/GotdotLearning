@@ -12,7 +12,8 @@ config_version=5
 
 config/name="gotdot learning"
 run/main_scene="res://flapbirdy.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [dotnet]
