@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3e0dcxuvlov7"]
+[gd_scene load_steps=5 format=3 uid="uid://c3e0dcxuvlov7"]
 
 [ext_resource type="Texture2D" uid="uid://beppkfnja3fyp" path="res://Assets/2D/MC/birdy.png" id="1_owbrx"]
 [ext_resource type="Script" path="res://Birdy.cs" id="2_cyp62"]
-[ext_resource type="Texture2D" uid="uid://mm415yi7ukkk" path="res://Assets/2D/Background/brick.png" id="3_22mf0"]
+[ext_resource type="PackedScene" uid="uid://blfwy1ltsobm5" path="res://floor_and_roof.tscn" id="3_xe1vr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvaen"]
 size = Vector2(50, 50)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykvo7"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,8 +16,8 @@ position = Vector2(-502, 7)
 mass = 0.39
 gravity_scale = 0.505
 script = ExtResource("2_cyp62")
-speedModifier = 200000.0
-downModifier = -5000.0
+speedModifier = 20000.0
+downModifier = -500.0
 airFriction = 1.0
 
 [node name="birdy" type="Sprite2D" parent="Birdy"]
@@ -28,15 +26,8 @@ texture = ExtResource("1_owbrx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Birdy"]
 shape = SubResource("RectangleShape2D_qvaen")
 
-[node name="FloorAndRoof" type="StaticBody2D" parent="."]
+[node name="FloorAndRoof" parent="." instance=ExtResource("3_xe1vr")]
+position = Vector2(1, -300)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorAndRoof"]
-shape = SubResource("RectangleShape2D_ykvo7")
-
-[node name="Sprite2D" type="Sprite2D" parent="FloorAndRoof"]
-texture_repeat = 2
-position = Vector2(-407, -300.5)
-scale = Vector2(6.8, 0.94)
-texture = ExtResource("3_22mf0")
-region_enabled = true
-region_rect = Rect2(0, 0, 50, 50)
+[node name="FloorAndRoof2" parent="." instance=ExtResource("3_xe1vr")]
+position = Vector2(1, 299)
