@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3e0dcxuvlov7"]
+[gd_scene load_steps=6 format=3 uid="uid://c3e0dcxuvlov7"]
 
 [ext_resource type="Texture2D" uid="uid://beppkfnja3fyp" path="res://Assets/2D/MC/birdy.png" id="1_owbrx"]
 [ext_resource type="Script" path="res://Birdy.cs" id="2_cyp62"]
+[ext_resource type="Texture2D" uid="uid://mm415yi7ukkk" path="res://Assets/2D/Background/brick.png" id="3_22mf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvaen"]
 size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykvo7"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,3 +27,16 @@ texture = ExtResource("1_owbrx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Birdy"]
 shape = SubResource("RectangleShape2D_qvaen")
+
+[node name="FloorAndRoof" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorAndRoof"]
+shape = SubResource("RectangleShape2D_ykvo7")
+
+[node name="Sprite2D" type="Sprite2D" parent="FloorAndRoof"]
+texture_repeat = 2
+position = Vector2(-407, -300.5)
+scale = Vector2(6.8, 0.94)
+texture = ExtResource("3_22mf0")
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 50)
