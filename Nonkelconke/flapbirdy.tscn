@@ -19,6 +19,7 @@ script = ExtResource("2_cyp62")
 speedModifier = 20000.0
 downModifier = -500.0
 airFriction = 1.0
+jumpPower = -50000.0
 
 [node name="birdy" type="Sprite2D" parent="Birdy"]
 texture = ExtResource("1_owbrx")
