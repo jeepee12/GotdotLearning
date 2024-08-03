@@ -1,16 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3e0dcxuvlov7"]
+[gd_scene load_steps=4 format=3 uid="uid://c3e0dcxuvlov7"]
 
 [ext_resource type="Texture2D" uid="uid://beppkfnja3fyp" path="res://Assets/2D/MC/birdy.png" id="1_owbrx"]
 [ext_resource type="Script" path="res://Birdy.cs" id="2_cyp62"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvaen"]
+size = Vector2(50, 50)
+
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Birdy" type="RigidBody2D" parent="."]
 position = Vector2(-502, 7)
-texture = ExtResource("1_owbrx")
+mass = 0.39
+gravity_scale = 0.505
 script = ExtResource("2_cyp62")
 speedModifier = 100.0
+downModifier = -5.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+[node name="birdy" type="Sprite2D" parent="Birdy"]
+texture = ExtResource("1_owbrx")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Birdy"]
+shape = SubResource("RectangleShape2D_qvaen")

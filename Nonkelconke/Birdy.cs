@@ -1,25 +1,22 @@
 using Godot;
 using System;
 
-public partial class Birdy : Sprite2D
+public partial class Birdy : RigidBody2D
 {
-	int i = 0;
 	[Export]
 	private float speedModifier;
+
+	[Export]
+	private float downModifier;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
-		int test = 32;
-		Position = new Vector2(Position.X + (float)delta*speedModifier, Position.Y);
-		++i;
-		if (i%10 == 0)
-		{
-			GD.Print(delta);
-		}
+		// Position = new Vector2(Position.X + (float)delta*speedModifier, Position.Y);
+		AddConstantCentralForce(new Vector2((float)delta*speedModifier, downModifier));
 	}
 }
